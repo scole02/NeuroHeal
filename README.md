@@ -18,7 +18,7 @@ You will need pipenv to install dependencies.
 8. Enjoy
 
 
-APIs (Can be found in `alzi/urls.py`)
+APIs (Can be found in `alzi/alzi/urls.py`)
 
 Single question operations:  
 localhost:8000/api/question/\<id> (GET, PUT)  
