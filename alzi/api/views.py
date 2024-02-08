@@ -6,6 +6,10 @@ from rest_framework.views import APIView
 from bson import ObjectId
 from .serializers import QuestionSerializer
 from .mongo import db
+import requests
+import json
+
+OPENAI_API_KEY = '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'
 
 @api_view(['GET'])
 def hello_world(request):
@@ -80,4 +84,78 @@ class QuestionAPIView(APIView):
                 return Response({"message": "No changes made to the question."}, status=status.HTTP_304_NOT_MODIFIED)
 
         except Exception as e:
-            return Response({"message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({"message": str(e)}, status=status.HTTP_200_OK)
+        
+
+def create_chat_body(body, stream=False):
+    # Text messages are stored inside request body using the Deep Chat JSON format:
+    # https://deepchat.dev/docs/connect
+    chat_body = {
+        "messages": [
+            {
+                "role": "assistant" if message["role"] == "ai" else message["role"],
+                "content": message["text"]
+            } for message in body["messages"]
+        ],
+        "model": body["model"]
+    }
+    if stream:
+        chat_body["stream"] = True
+    return chat_body
+
+@api_view(['POST'])
+def chat(body):
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + OPENAI_API_KEY
+    }
+    print(body.data)
+    chat_body = create_chat_body(body.data)
+    response = requests.post(
+        "https://api.openai.com/v1/chat/completions", json=chat_body, headers=headers)
+    json_response = response.json()
+    if "error" in json_response:
+        raise Exception(json_response["error"]["message"])
+    result = json_response["choices"][0]["message"]["content"]
+    # Sends response back to Deep Chat using the Response format:
+    # https://deepchat.dev/docs/connect/#Response
+    return Response({"text": result}, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def chat_stream(body):
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + OPENAI_API_KEY
+    }
+    chat_body = create_chat_body(body, stream=True)
+    response = requests.post(
+        "https://api.openai.com/v1/chat/completions", json=chat_body, headers=headers, stream=True)
+    
+    def generate():
+            # increase chunk size if getting errors for long messages
+            for chunk in response.iter_content(chunk_size=2048):
+                if chunk:
+                    if not(chunk.decode().strip().startswith("data")):
+                        errorMessage = json.loads(chunk.decode())["error"]["message"]
+                        print("Error in the retrieved stream chunk:", errorMessage)
+                        # this exception is not caught, however it signals to the user that there was an error
+                        raise Exception(errorMessage)
+                    lines = chunk.decode().split("\n")
+                    filtered_lines = list(
+                        filter(lambda line: line.strip(), lines))
+                    for line in filtered_lines:
+                        data = line.replace("data:", "").replace(
+                            "[DONE]", "").replace("data: [DONE]", "").strip()
+                        if data:
+                            try:
+                                result = json.loads(data)
+                                content = result["choices"][0].get("delta", {}).get("content", "")
+                                # Sends response back to Deep Chat using the Response format:
+                                # https://deepchat.dev/docs/connect/#Response
+                                yield "data: {}\n\n".format(json.dumps({"text": content}))
+                            except json.JSONDecodeError:
+                                # Incomplete JSON string, continue accumulating lines
+                                pass
+    return Response(generate(), mimetype="text/event-stream", status=status.HTTP_200_OK)
+
+
