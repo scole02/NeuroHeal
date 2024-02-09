@@ -174,8 +174,8 @@ def create_chat_body(body, stream=False):
         "messages": [
         {
             "role": "system",
-            "content": "You are a chatbot to help the memory enhaucement therapy of Alzheimer's patient and ask him/her cognitive questions. Talk in the vibe of daily conversation." 
-                        # f"Below are some template questions, you should choose from this, do not expose the answer.\n{template_string}"
+            "content": "You are a chatbot to help the memory enhaucement therapy of Alzheimer's patient user and ask the user cognitive questions. Talk in the vibe of daily conversation." +
+                        f"Below are some template questions where you should choose you question. Be polite, positive and do not expose the answer.\n{template_string}"
         }
         ] + [
             {
@@ -218,14 +218,14 @@ def chat(request):
     # # request.session.modified = True
     # print(previous_activity)
     
-    userid = 'anonymous'
+    userid = 'denny'
     chat_collection = db.chatmessages
     question = chat_collection.find_one({"userid": userid})
     if question is None:
         db.chatmessages.insert_one({"userid": 'anonymous', "chat_history": request.data.get('messages', ''), "created_at": datetime.now()})
     else:
         update_data = request.data
-        update_data = {"userid": 'anonymous', "chat_history": request.data.get('messages', '')}
+        update_data = {"userid": userid, "chat_history": request.data.get('messages', '')}
         result = chat_collection.replace_one({"_id": question["_id"]}, update_data)
     
     headers = {
