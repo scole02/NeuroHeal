@@ -47,9 +47,11 @@ function App() {
     }
   };
 
+
   return (
     <div className="appContainer">
       {/* <QuestionsPage /> */}
+      <div className="chatContainer">
       <DeepChat
           ref={chatElementRef}
           style={{ borderRadius: "10px", width: '96vw', height: "calc(100vh - 70px)", "font-size": '1.87rem', "padding-top": "10px", borderColor: "#e4e4e4", background: linearGradient }}
@@ -100,6 +102,7 @@ function App() {
           }}
         />
     </div>
+  </div>
   );
 }
 
