@@ -3,10 +3,13 @@
   "version": "10.2.4",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.2",
+    "axios": "^1.6.7",
     "bootstrap": "4.6.0",
     "chartist": "0.11.4",
+    "deep-chat-react": "^1.4.10",
     "gulp": "^4.0.2",
     "gulp-append-prepend": "1.0.9",
+    "microsoft-cognitiveservices-speech-sdk": "^1.35.0",
     "react": ">=16.8.0",
     "react-bootstrap": "2.4.0",
     "react-chartist": "0.14.4",
