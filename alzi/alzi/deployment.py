@@ -32,5 +32,5 @@ STORAGES = {
     },
 }
 
-STATIC_ROOT = BASE_DIR/'static_files'
+STATIC_ROOT = BASE_DIR + '/static_files'
 
