@@ -77,7 +77,7 @@ function Notifications() {
                   <small>Notifications Style</small>
                 </h5>
                 <Alert variant="info">
-                  <span>This is a plain notification</span>
+                  <span></span>
                 </Alert>
                 <Alert variant="info">
                   <button
@@ -88,7 +88,7 @@ function Notifications() {
                   >
                     <i className="nc-icon nc-simple-remove"></i>
                   </button>
-                  <span>This is a notification with close button.</span>
+                  <span>You Pro plan will renew in 10 days.</span>
                 </Alert>
                 <Alert className="alert-with-icon" variant="info">
                   <button
@@ -104,7 +104,7 @@ function Notifications() {
                     className="nc-icon nc-bell-55"
                   ></span>
                   <span>
-                    This is a notification with close button and icon.
+                    Carla's progress is getting better by 20%.
                   </span>
                 </Alert>
                 <Alert className="alert-with-icon" variant="info">
@@ -121,10 +121,9 @@ function Notifications() {
                     className="nc-icon nc-bell-55"
                   ></span>
                   <span>
-                    This is a notification with close button and icon and have
-                    many lines. You can see that the icon and the close button
-                    are always vertically aligned. This is a beautiful
-                    notification. So you don't have to worry about the style.
+                    Your default calender app reminded about Carla's
+                    appointment is in 1 day with Doctor Jane at Overlake Center
+                    Bellevue, Washington.
                   </span>
                 </Alert>
               </Col>
@@ -209,62 +208,56 @@ function Notifications() {
             <div className="places-buttons">
               <Row>
                 <Col className="offset-md-3 text-center" md="6">
-                  <Card.Title as="h4">Notifications Places</Card.Title>
+                  {/* <Card.Title as="h4"></Card.Title> */}
                   <p className="card-category">
-                    <small>Click to view notifications</small>
+                    <small></small>
                   </p>
                 </Col>
               </Row>
               <Row className="justify-content-center">
                 <Col lg="3" md="3">
-                  <Button block onClick={() => notify("tl")} variant="default">
-                    Top Left
-                  </Button>
+                  
                 </Col>
                 <Col lg="3" md="3">
-                  <Button block onClick={() => notify("tc")} variant="default">
-                    Top Center
-                  </Button>
+                  
                 </Col>
                 <Col lg="3" md="3">
-                  <Button block onClick={() => notify("tr")} variant="default">
-                    Top Right
-                  </Button>
+                 
                 </Col>
               </Row>
               <Row className="justify-content-center">
                 <Col lg="3" md="3">
                   <Button block onClick={() => notify("bl")} variant="default">
-                    Bottom Left
+                    
                   </Button>
                 </Col>
                 <Col lg="3" md="3">
                   <Button block onClick={() => notify("bc")} variant="default">
-                    Bottom Center
+                    
                   </Button>
                 </Col>
                 <Col lg="3" md="3">
                   <Button block onClick={() => notify("br")} variant="default">
-                    Bottom Right
+                    
                   </Button>
                 </Col>
               </Row>
             </div>
             <Row>
               <Col className="text-center" md="12">
-                <h4 className="title">Modal</h4>
+                <h4 className="title"></h4>
                 <Button
                   className="btn-fill btn-wd"
                   variant="info"
                   onClick={() => setShowModal(true)}
                 >
-                  Launch Modal Mini
+                  
                 </Button>
               </Col>
             </Row>
           </Card.Body>
         </Card>
-        {/* Mini Modal */}
+        
         <Modal
           className="modal-mini modal-primary"
           show={showModal}
@@ -276,7 +269,7 @@ function Notifications() {
             </div>
           </Modal.Header>
           <Modal.Body className="text-center">
-            <p>Always have an access to your profile</p>
+            <p></p>
           </Modal.Body>
           <div className="modal-footer">
             <Button

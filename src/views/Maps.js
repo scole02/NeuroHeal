@@ -6,7 +6,7 @@ function Maps() {
   useEffect(() => {
     // Load Google Maps API script
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCXJIMyGu2eTsfC4Z5wV5t9Ys82LTFO66o&libraries=places`;
     script.async = true;
     window.document.body.appendChild(script);
 

@@ -82,6 +82,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AdminLayout from 'layouts/Admin.js';
 import Login from './Cpage/Clog'
 import LoginP from './PPage/PLog';
+//import App from './alzi_frontend/src/App.js';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
 import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
@@ -100,6 +101,7 @@ root.render(
         <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
         <Route exact path="/Clog" component ={Login}/> 
         <Route exact path="/Plog" component ={LoginP}/>
+       {/*  <Route exact path="/App" component ={App}/>  */}
         <Redirect from="/" to="/landing" />
       </Switch>
     </Suspense>
