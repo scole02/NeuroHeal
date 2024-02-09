@@ -1,9 +1,45 @@
-.App {
-  text-align: center;
+/* Reset margins and paddings to ensure the app fills the whole page */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
+.appContainer {
+  text-align: center;
+  height: 100vh; /* Make the app fill the whole viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+}
+
+/* Update the header styles for a better look */
+.App-header {
+  background-color: #282c34;
+  width: 100%; /* Ensure it fills the width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px 0; /* Add some padding for better spacing */
+}
+
+/* Refine the logo animation for a smoother appearance */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Adjust logo size for a more consistent design */
 .App-logo {
-  height: 40vmin;
+  height: 20vmin; /* Adjust the size as needed */
   pointer-events: none;
 }
 
@@ -13,26 +49,7 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
+/* Update link colors for better contrast and visibility */
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
