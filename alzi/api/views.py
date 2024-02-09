@@ -189,16 +189,7 @@ def create_chat_body(body, stream=False):
         chat_body["stream"] = True
     return chat_body
 
-@api_view(['POST'])
-def login(request):
-    if request.method == "POST":
-        if request.session.test_cookie_worked():
-            request.session.delete_test_cookie()
-            return Response("You're logged in.")
-        else:
-            return Response("Please enable cookies and try again.")
-    request.session.set_test_cookie()
-    return render(request, "foo/login_form.html")
+
 
 @api_view(['POST'])
 def chat(request):
@@ -206,27 +197,36 @@ def chat(request):
     SESSION_TIMEOUT = timedelta(seconds=1)
 
     # Fetch the latest (last) activity time from the list
-    print(request.session.has_key('activity_time'))
-    previous_activity = request.session.get('activity_time', [datetime.utcnow().isoformat()])
-    last_activity_str = previous_activity[-1]
+    # print(request.session.has_key('activity_time'))
+    # previous_activity = request.session.get('activity_time', [datetime.utcnow().isoformat()])
+    # last_activity_str = previous_activity[-1]
     
-    last_activity = datetime.fromisoformat(last_activity_str)
+    # last_activity = datetime.fromisoformat(last_activity_str)
 
-    time_diff_seconds = (datetime.utcnow() - last_activity).total_seconds()
-    print("Last activity:", last_activity)
-    print("Current time:", datetime.utcnow())
+    # time_diff_seconds = (datetime.utcnow() - last_activity).total_seconds()
+    # print("Last activity:", last_activity)
+    # print("Current time:", datetime.utcnow())
     
-    if time_diff_seconds > SESSION_TIMEOUT.total_seconds():
-        # Session has timed out, save chat history to database
-        userid = 'anonymous'
-        # Assuming the user is authenticated and you can get their ID
-        # userid = str(request.user.id) if request.user.is_authenticated else 'anonymous'
-        db.chatmessages.insert_one(userid=userid, chat_history=request.data.get('messages', ''))
+    # if time_diff_seconds > SESSION_TIMEOUT.total_seconds():
+    #     # Session has timed out, save chat history to database
+    #     userid = 'anonymous'
+    #     # Assuming the user is authenticated and you can get their ID
+    #     # userid = str(request.user.id) if request.user.is_authenticated else 'anonymous'
+    #     db.chatmessages.insert_one(userid=userid, chat_history=request.data.get('messages', ''))
 
-    request.session['activity_time'] = previous_activity.append(datetime.utcnow().isoformat())
-    # request.session.modified = True
-    print(previous_activity)
+    # request.session['activity_time'] = previous_activity.append(datetime.utcnow().isoformat())
+    # # request.session.modified = True
+    # print(previous_activity)
     
+    userid = 'anonymous'
+    chat_collection = db.chatmessages
+    question = chat_collection.find_one({"userid": userid})
+    if question is None:
+        db.chatmessages.insert_one({"userid": 'anonymous', "chat_history": request.data.get('messages', ''), "created_at": datetime.now()})
+    else:
+        update_data = request.data
+        update_data = {"userid": 'anonymous', "chat_history": request.data.get('messages', '')}
+        result = chat_collection.replace_one({"_id": question["_id"]}, update_data)
     
     headers = {
         "Content-Type": "application/json",
