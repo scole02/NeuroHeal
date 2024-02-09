@@ -331,7 +331,9 @@ function Dashboard() {
             <Card className="card-tasks">
               <Card.Header>
                 <Card.Title as="h4">Tasks</Card.Title>
-                <p className="card-category">Update the question</p>
+                <p className="card-category">Update the question</p> 
+                  // HERE YOU UPDATE THE QUESTION FOR THE PATIENT CHATBOT
+                    //ADD LIST AND USE CHECK BOXES FOR ALTER OR REMOVE FROM THE LIST
               </Card.Header>
               <Card.Body>
                 <div className="table-full-width">
