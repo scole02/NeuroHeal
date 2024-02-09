@@ -133,10 +133,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # sessions
-TIME= 240*60
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
-SESSION_EXPIRE_AT_BROWSER_CLOSE= True
-SESSION_COOKIE_AGE = TIME    
-SESSION_IDLE_TIMEOUT = TIME
+# TIME= 240*60
+# SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+# SESSION_EXPIRE_AT_BROWSER_CLOSE= True
+# SESSION_COOKIE_AGE = TIME    
+# SESSION_IDLE_TIMEOUT = TIME
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.memcached.PyLibMCCache",
+    }
+}
 
-DEBUG = True
+SESSION_SAVE_EVERY_REQUEST=True
