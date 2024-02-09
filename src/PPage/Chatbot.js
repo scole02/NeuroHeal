@@ -10,7 +10,7 @@ function Chatbot() {
   }, []);
 
   const deepChatRequest = {
-    url: 'http://localhost:8000/api/chat/', 
+    url: 'https://alzi-django-web-app.azurewebsites.net/api/chat/', 
     additionalBodyProps: {
       model: 'gpt-3.5-turbo',
       max_tokens: 200,
