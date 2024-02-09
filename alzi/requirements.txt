@@ -1,4 +1,3 @@
-angles==1.9.13
 asgiref==3.7.2
 backports.zoneinfo==0.2.1
 base-local-planner==1.17.3
@@ -13,12 +12,6 @@ django-cors-headers==4.3.1
 djangorestframework==3.14.0
 dnspython==2.5.0
 dynamic-reconfigure==1.7.3
-gencpp==0.7.0
-geneus==3.0.0
-genlisp==0.4.18
-genmsg==0.6.0
-gennodejs==2.0.2
-genpy==0.6.15
 idna==3.6
 interactive-markers==1.12.0
 message-filters==1.16.0
