@@ -56,7 +56,7 @@ const dashboardRoutes = [
   }, */
   {
     path: "/typography",
-    name: "Typography",
+    name: "Chat_History",
     icon: "nc-icon nc-paper-2",
     component: Typography,
     layout: "/admin"
