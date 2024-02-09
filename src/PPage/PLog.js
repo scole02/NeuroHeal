@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 //import "assets/css/Login.css";
 
 export default function LoginP() {
+  function ButtonLink({ to, children }) {
+    return <Link to={to}>
+              <button className="btn btn-primary btn-block">{children}
+              </button>
+           </Link>;
+  } 
   return (
     <div className="container mt-5" style={{ backgroundColor: '#E0F1EF' }}>
       <div className="row justify-content-center">
@@ -33,9 +39,7 @@ export default function LoginP() {
                   />
                 </div>
                 <div className="form-group">
-                  <button type="submit" className="btn btn-primary btn-block">
-                    Login
-                  </button>
+                <ButtonLink to="/Chatbot">Login</ButtonLink>
                 </div>
               </form>
               <footer className="mt-4">

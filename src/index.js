@@ -101,7 +101,7 @@ root.render(
         <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
         <Route exact path="/Clog" component ={Login}/> 
         <Route exact path="/Plog" component ={LoginP}/>
-       {/*  <Route exact path="/App" component ={App}/>  */}
+        <Route exact path="/Chatbot" component ={Chatbot}/>
         <Redirect from="/" to="/landing" />
       </Switch>
     </Suspense>
