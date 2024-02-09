@@ -82,6 +82,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AdminLayout from 'layouts/Admin.js';
 import Login from './Cpage/Clog'
 import LoginP from './PPage/PLog';
+import Chatbot from 'PPage/Chatbot';
 //import App from './alzi_frontend/src/App.js';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";

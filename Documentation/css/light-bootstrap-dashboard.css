@@ -57,7 +57,7 @@ td,
 button.close {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+  font-family: "SFPro";
   font-weight: 400; }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
@@ -1109,7 +1109,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .radio label::before,
 .radio label::after {
-  font-family: 'FontAwesome';
+  font-family: 'SFPro';
   content: "\f10c";
   font-size: 20px;
   height: 20px;

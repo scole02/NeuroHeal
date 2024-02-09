@@ -29,12 +29,12 @@ function Maps() {
         position: myLatlng,
         map: map,
         animation: google.maps.Animation.DROP,
-        title: "Light Bootstrap Dashboard PRO React!",
+        title: "Carla's Live Location",
       });
 
       const contentString =
-        '<div class="info-window-content"><h2>Light Bootstrap Dashboard PRO React</h2>' +
-        "<p>A premium Admin for React-Bootstrap, Bootstrap, React, and React Hooks.</p></div>";
+        '<div class="info-window-content"><h2> She is 3 miles away from home.</h2>' +
+        "<p>Carla's Live Location</p></div>";
 
       const infowindow = new google.maps.InfoWindow({
         content: contentString,

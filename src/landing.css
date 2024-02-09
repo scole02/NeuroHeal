@@ -1,0 +1,48 @@
+/* LandingPage.css */
+.landing-page-container {
+    text-align: center;
+    font-family: 'SFPro';
+    color: #333;
+    background-color: #f4f4f4; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-container img {
+    max-width: 200px; /* Adjust to match the size of the logo in the screenshot */
+    margin-bottom: 50px; /* Space between logo and buttons */
+  }
+   
+  .login-button {
+    display: block;
+    width: 60%; /* Adjust width to match the screenshot */
+    padding: 20px 0; /* Vertical padding, horizontal padding is not needed because of width */
+    margin: 20px auto; /* Adjust margin to match the screenshot */
+    background-color: #00796B; /* The teal background color from the screenshot */
+    color: white; /* Text color */
+    border: none; /* No border for flat design */
+    border-radius: 50px; /* Large radius for pill-like shape */
+    font-size: 20px; /* Larger font size for readability */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-transform: uppercase; /* If the text is uppercase in the screenshot */
+    font-weight: bold; /* If the text is bold in the screenshot */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .login-button:hover {
+    background-color: #00695C; /* Darker shade for hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover effect */
+  }
+  
+  /* If there are any specific differences between the patient and caregiver buttons, they can be added here */
+  .patient {
+    /* Additional styles for patient button if needed */
+  }
+  
+  .caregiver {
+    /* Additional styles for caregiver button if needed */
+  }
