@@ -224,8 +224,9 @@ def chat(request):
         db.chatmessages.insert_one(userid=userid, chat_history=request.data.get('messages', ''))
 
     request.session['activity_time'] = previous_activity.append(datetime.utcnow().isoformat())
-    request.session.modified = True
+    # request.session.modified = True
     print(previous_activity)
+    
     
     headers = {
         "Content-Type": "application/json",

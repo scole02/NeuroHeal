@@ -1,14 +1,11 @@
 import React from 'react';
-import QuestionsPage from './QuestionsPage'; // Adjust the import path as necessary
 //import {RequestDetails} from 'deep-chat/dist/types/interceptors';
 import {DeepChat} from 'deep-chat-react';
 import * as sdk from "microsoft-cognitiveservices-speech-sdk";
 import './App.css';
 
 function App() {
-
   const chatElementRef = React.useRef(null);
-
 
   React.useEffect(() => {
     window.SpeechSDK = sdk;
@@ -84,11 +81,13 @@ function App() {
               "position": "inside-right"
             }
           }'
-          introMessage={{text: 'Talk to your Alzi Bot!'}}
+
+          introMessage={{text: 'Talk to me!'}}
           request={deepChatRequest}
           speechToText={{
             azure: {subscriptionKey: "20457bfbf6c9429c8dfc98f517390578", region: "westus"},
           }}
+          
           textToSpeech={{lang: "us", volume: 0.9}}
           requestBodyLimits={{maxMessages: -1}}
           requestInterceptor={(details) => {
