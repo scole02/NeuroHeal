@@ -5,7 +5,9 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'alzi.settings')
+
+    settings_module = 'alzi.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'alzi.settings'
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)    
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
