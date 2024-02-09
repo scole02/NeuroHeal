@@ -75,7 +75,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const apiBaseUrl = 'http://localhost:8000/api'; // Update with your actual API base URL
+//const apiBaseUrl = 'http://localhost:8000/api'; // Update with your actual API base URL
+const apiBaseUrl = 'https://alzi-django-web-app.azurewebsites.net/api'; // Update with your actual API base URL
 
 export default function TasksComponent() {
   const [questions, setQuestions] = useState([{ _id: '', question: '', answer: '' }]);

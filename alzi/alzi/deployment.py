@@ -21,7 +21,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-# CORS_ORIGIN_ALLOW_ALL = []
+CORS_ORIGIN_ALLOW_ALL = ['https://witty-pebble-0b4c4811e.4.azurestaticapps.net']
 
 STORAGES = {
     "default": {
