@@ -38,8 +38,8 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-        cd alzi
-        zip release.zip ./* -r
+          cd alzi
+          zip release.zip ./* -r
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v3
