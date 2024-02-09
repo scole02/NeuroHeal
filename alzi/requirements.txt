@@ -8,7 +8,6 @@ djangorestframework==3.14.0
 dnspython==2.5.0
 idna==3.6
 psycopg2==2.9.9
-pykerberos==1.2.4
 pylibmc==1.6.3
 pymongo==4.6.1
 python-snappy==0.6.1
