@@ -2,9 +2,6 @@ asgiref==3.7.2
 backports.zoneinfo==0.2.1
 certifi==2024.2.2
 charset-normalizer==3.3.2
-diagnostic-analysis==1.11.0
-diagnostic-common-diagnostics==1.11.0
-diagnostic-updater==1.11.0
 Django==4.2.10
 django-cors-headers==4.3.1
 djangorestframework==3.14.0
