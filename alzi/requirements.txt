@@ -1,6 +1,5 @@
 asgiref==3.7.2
 backports.zoneinfo==0.2.1
-bondpy==1.8.6
 certifi==2024.2.2
 charset-normalizer==3.3.2
 diagnostic-analysis==1.11.0
