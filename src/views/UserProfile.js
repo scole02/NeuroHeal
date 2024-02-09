@@ -30,7 +30,7 @@ function User() {
                       <Form.Group>
                         <label>Patient's Name </label>
                         <Form.Control
-                          defaultValue="Creative Code Inc."
+                          defaultValue="Carla Jane"
                           disabled
                           placeholder="Company"
                           type="text"
@@ -41,7 +41,7 @@ function User() {
                       <Form.Group>
                         <label>Username</label>
                         <Form.Control
-                          defaultValue="michael23"
+                          defaultValue="Saasha12"
                           placeholder="Username"
                           type="text"
                         ></Form.Control>
@@ -64,7 +64,7 @@ function User() {
                       <Form.Group>
                         <label>First Name</label>
                         <Form.Control
-                          defaultValue="Mike"
+                          defaultValue="Saasha"
                           placeholder="Company"
                           type="text"
                         ></Form.Control>
@@ -74,7 +74,7 @@ function User() {
                       <Form.Group>
                         <label>Last Name</label>
                         <Form.Control
-                          defaultValue="Andrew"
+                          defaultValue="Lei"
                           placeholder="Last Name"
                           type="text"
                         ></Form.Control>
@@ -98,7 +98,7 @@ function User() {
                       <Form.Group>
                         <label>City</label>
                         <Form.Control
-                          defaultValue="Mike"
+                          defaultValue="Seattle"
                           placeholder="City"
                           type="text"
                         ></Form.Control>
@@ -108,7 +108,7 @@ function User() {
                       <Form.Group>
                         <label>Country</label>
                         <Form.Control
-                          defaultValue="Andrew"
+                          defaultValue="USA"
                           placeholder="Country"
                           type="text"
                         ></Form.Control>
@@ -164,11 +164,11 @@ function User() {
                     <img
                       alt="..."
                       className="avatar border-gray"
-                      src={require("assets/img/faces/face-3.jpg")}
+                      src={require("assets/img/faces/face-7.jpg")}
                     ></img>
-                    <h5 className="title">Mike Andrew</h5>
+                    <h5 className="title">Sasha Lei</h5>
                   </a>
-                  <p className="description">michael24</p>
+                  <p className="description">saasha12</p>
                 </div>
                 <p className="description text-center">
                   "Meow <br></br>

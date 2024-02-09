@@ -104,25 +104,25 @@ function Header() {
                   href="#pablo"
                   onClick={(e) => e.preventDefault()}
                 >
-                  Notification 1
+                  Carla came back home!
                 </Dropdown.Item>
                 <Dropdown.Item
                   href="#pablo"
                   onClick={(e) => e.preventDefault()}
                 >
-                  Notification 2
+                  Doc Appointment tomorrow.
                 </Dropdown.Item>
                 <Dropdown.Item
                   href="#pablo"
                   onClick={(e) => e.preventDefault()}
                 >
-                  Notification 3
+                  Carla is now 95% accurate with family names.
                 </Dropdown.Item>
                 <Dropdown.Item
                   href="#pablo"
                   onClick={(e) => e.preventDefault()}
                 >
-                  Notification 4
+                  Carla is at shopping mart!
                 </Dropdown.Item>
                 <Dropdown.Item
                   href="#pablo"
@@ -153,7 +153,7 @@ function Header() {
                 <span className="no-icon">Account</span>
               </Nav.Link>
             </Nav.Item>
-            <Dropdown as={Nav.Item}>
+           {/*  <Dropdown as={Nav.Item}>
               <Dropdown.Toggle
                 aria-expanded={false}
                 aria-haspopup={true}
@@ -162,47 +162,47 @@ function Header() {
                 id="navbarDropdownMenuLink"
                 variant="default"
                 className="m-0"
-              >
-                <span className="no-icon">Dropdown</span>
+              > */}
+                {/* <span className="no-icon">Dropdown</span>
               </Dropdown.Toggle>
               <Dropdown.Menu aria-labelledby="navbarDropdownMenuLink">
                 <Dropdown.Item
                   href="#pablo"
                   onClick={(e) => e.preventDefault()}
                 >
-                  Action
+                  Carla came back home!
                 </Dropdown.Item>
                 <Dropdown.Item
                   href="#pablo"
                   onClick={(e) => e.preventDefault()}
                 >
-                  Another action
+                  Doc Appointment tomorrow. 
                 </Dropdown.Item>
                 <Dropdown.Item
                   href="#pablo"
                   onClick={(e) => e.preventDefault()}
                 >
-                  Something
+                  Carla is now 95% accurate with family names.
                 </Dropdown.Item>
                 <Dropdown.Item
                   href="#pablo"
                   onClick={(e) => e.preventDefault()}
                 >
-                  Something else here
+                  Carla is at shopping mart!
                 </Dropdown.Item>
                 <div className="divider"></div>
                 <Dropdown.Item
                   href="#pablo"
                   onClick={(e) => e.preventDefault()}
-                >
-                  Separated link
+                > */}
+                 {/*  Separated link
                 </Dropdown.Item>
               </Dropdown.Menu>
-            </Dropdown>
+            </Dropdown> */}
             <Nav.Item>
               <Nav.Link
                 className="m-0"
-                href="#pablo"
+                href="/landing"
                 onClick={handleLogout}
               >
                 <span className="no-icon">Log out</span>

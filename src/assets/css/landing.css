@@ -1,0 +1,152 @@
+.desktop-home-page {
+    background-color: #f6fbfb;
+    height: 1024px;
+    overflow: hidden;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .desktop-home-page .overlap-group {
+    height: 205px;
+    left: -27px;
+    position: absolute;
+    top: 0;
+    width: 1467px;
+  }
+  
+  .desktop-home-page .rectangle {
+    background-color: #e0f1ef;
+    height: 191px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1467px;
+  }
+  
+  .desktop-home-page .alzi-app-LOGO {
+    height: 173px;
+    left: 122px;
+    object-fit: cover;
+    position: absolute;
+    top: 32px;
+    width: 189px;
+  }
+  .desktop-home-page .alzi-app {
+    height: 100px;
+    left: 122px;
+    object-fit: contain;
+    position: absolute;
+    top: 32px;
+    width: 189px;
+  }
+  .desktop-home-page .generated-image {
+    height: 512px;
+    left: 464px;
+    object-fit: cover;
+    position: absolute;
+    top: 256px;
+    width: 512px;
+  }
+  
+  .desktop-home-page .frame,
+  .desktop-home-page .component-wrapper {
+    height: 75px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 620px;
+  }
+  
+  .desktop-home-page .frame {
+    top: 787px;
+  }
+  
+  .desktop-home-page .component-wrapper {
+    top: 892px;
+  }
+  
+  .desktop-home-page .component,
+  .desktop-home-page .div-wrapper {
+    border-radius: 8px;
+    height: 55px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .desktop-home-page .component {
+    background-color: #1a9988;
+    color: #ffffff;
+  }
+  
+  .desktop-home-page .div-wrapper {
+    background-color: #1a9988;
+    border: 1px solid #616161;
+    color: #000000;
+  }
+  
+  .desktop-home-page .text-wrapper,
+  .desktop-home-page .div {
+    font-family: "Poppins", Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.75px;
+    line-height: normal;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15px;
+    width: 75;
+  }
+  
+  /* LandingPage.css */
+  .landing-page-container {
+    text-align: center;
+    font-family: 'Arial, sans-serif';
+    color: #333;
+    background-color: #f4f4f4; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-container img {
+    max-width: 200px;
+    margin-bottom: 50px;
+  }
+  
+  .login-button {
+    display: block;
+    /* width: 60%; */
+    padding: 200px 0 ;
+    margin: 20px auto;
+    background-color: #00796B;
+    color: inherit;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-button:hover {
+    background-color: #00695C;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* If there are any specific differences between the patient and caregiver buttons, they can be added here */
+  .patient {
+    /* Additional styles for patient button if needed */
+  }
+  
+  .caregiver {
+    /* Additional styles for caregiver button if needed */
+  }

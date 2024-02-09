@@ -21,13 +21,21 @@ import { useLocation, NavLink } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 
 import logo from "assets/img/reactlogo.png";
+import Side_logo from "assets/img/Alzi_logo.png";
 
 function Sidebar({ color, image, routes }) {
   const location = useLocation();
   const activeRoute = (routeName) => {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
   };
+  const logoStyle = {
+    width: '900px', // Adjust the width of the logo as needed
+    height: '700', // This will maintain the aspect ratio of the image
+    display: 'block', // Display block to fill the width of the container
+    margin: '0 auto' // This will center the image if the sidebar is wider than the image
+  };
   return (
+    
     <div className="sidebar" data-image={image} data-color={color}>
       <div
         className="sidebar-background"
@@ -38,15 +46,15 @@ function Sidebar({ color, image, routes }) {
       <div className="sidebar-wrapper">
         <div className="logo d-flex align-items-center justify-content-start">
           <a
-            href="https://www.creative-tim.com?ref=lbd-sidebar"
+            //href="https://www.creative-tim.com?ref=lbd-sidebar"
             className="simple-text logo-mini mx-1"
           >
             <div className="logo-img">
-              <img src={require("assets/img/reactlogo.png")} alt="..." />
+              <img src={require("assets/img/Alzi_logo.png")} alt="..." style={logoStyle} /> 
             </div>
           </a>
-          <a className="simple-text" href="http://www.creative-tim.com">
-            Alzi
+          <a className="simple-text" font_size="30">
+          Alzi
           </a>
         </div>
         <Nav>

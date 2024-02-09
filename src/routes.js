@@ -47,13 +47,13 @@ const dashboardRoutes = [
     component: UserProfile,
     layout: "/admin"
   },
-  {
+  /* {
     path: "/table",
     name: "Table List",
     icon: "nc-icon nc-notes",
     component: TableList,
     layout: "/admin"
-  },
+  }, */
   {
     path: "/typography",
     name: "Typography",
