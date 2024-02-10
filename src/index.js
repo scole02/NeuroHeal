@@ -83,6 +83,7 @@ import AdminLayout from 'layouts/Admin.js';
 import Login from './Cpage/Clog'
 import LoginP from './PPage/PLog';
 import Chatbot from 'PPage/Chatbot';
+import Dashboard from 'views/Dashboard';
 //import App from './alzi_frontend/src/App.js';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
@@ -103,6 +104,7 @@ root.render(
         <Route exact path="/Clog" component ={Login}/> 
         <Route exact path="/Plog" component ={LoginP}/>
         <Route exact path="/Chatbot" component ={Chatbot}/>
+        <Route exact path="/Dashboard" component={Dashboard}/>
         <Redirect from="/" to="/landing" />
       </Switch>
     </Suspense>
