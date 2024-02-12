@@ -92,7 +92,8 @@ import "./assets/css/demo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const LandingPage = React.lazy(() => import('./landing'));
-
+// const Layout = React.lazy(() => import('./layouts/Admin.js'));
+const Aminroute = React.lazy(() => import('./layouts/Admin'));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -100,11 +101,12 @@ root.render(
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
         <Route exact path="/landing" component={LandingPage} />
-        <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+        <Route path="/admin" render={(props) => <Aminroute {...props} />} />
+        {/* <Route exact path="/landing" component={Admin} /> */}
         <Route exact path="/Clog" component ={Login}/> 
         <Route exact path="/Plog" component ={LoginP}/>
         <Route exact path="/Chatbot" component ={Chatbot}/>
-        <Route exact path="/Dashboard" component={Dashboard}/>
+        <Route exact path="/admin/Dashboard" component={Dashboard}/>
         <Redirect from="/" to="/landing" />
       </Switch>
     </Suspense>

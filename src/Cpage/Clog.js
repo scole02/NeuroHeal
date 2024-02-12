@@ -39,7 +39,7 @@ export default function Login() {
                   />
                 </div>
                 <div className="form-group">
-                  <ButtonLink to="/Dashboard">Login</ButtonLink>
+                  <ButtonLink to="/admin/Dashboard">Login</ButtonLink>
                 </div>
               </form>
               <footer className="mt-4">
