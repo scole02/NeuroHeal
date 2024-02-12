@@ -37,8 +37,8 @@ Alzi’s commitment to organizational features aligns with the overarching moral
 - `cd alzi`
 - `python manage.py migrate`  
 - `python manage.py runserver`
-- `cd NeuroHeal`
-- In a new shell start react project `npm start`
+- In a new shell start react project `cd NeuroHeal`
+- `npm start`
 - Navigate to http://localhost:3000
 
 ## How to Navigate on App
