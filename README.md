@@ -1,6 +1,6 @@
 # Alzi
 
-![version](https://img.shields.io/badge/version-10.2.4-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](lakshitaa)
+![version](https://img.shields.io/badge/version-10.2.4-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/WT2QAD3p)
 
 ```
 light-bootstrap-dashboard-react
