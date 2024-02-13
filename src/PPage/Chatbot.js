@@ -10,7 +10,8 @@ function Chatbot() {
   }, []);
 
   const deepChatRequest = {
-    url: 'http://localhost:8000/api/chat/', 
+    //url: 'https://witty-pebble-0b4c4811e.4.azurestaticapps.net', 
+    url: `${process.env.REACT_APP_API_URI}` + "/chat/", 
     additionalBodyProps: {
       model: 'gpt-3.5-turbo',
       max_tokens: 200,
@@ -73,7 +74,7 @@ function Chatbot() {
           introMessage={{text: 'Talk to me!'}}
           request={deepChatRequest}
           speechToText={{
-            azure: {subscriptionKey: "<your key>", region: "westus"},
+            azure: {subscriptionKey: `${process.env.REACT_APP_AZURE_SPEECH_KEY}`, region: "westus"},
           }}
           
           textToSpeech={{lang: "us", volume: 0.9}}

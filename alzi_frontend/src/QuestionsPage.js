@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const apiBaseUrl = 'http://localhost:8000/api'; // Update with your actual API base URL
+const apiBaseUrl = `${process.env.REACT_APP_API_URI}`; // Update with your actual API base URL
 
 const QuestionsPage = () => {
   const [questions, setQuestions] = useState([{ _id: '', question: '', answer: '' }]);
