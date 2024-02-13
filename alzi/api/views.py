@@ -11,7 +11,7 @@ import json
 # from django.utils.timezone import now
 from datetime import timedelta, datetime, timezone
 
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = '<yourkey>'
 
 @api_view(['GET'])
 def hello_world(request):

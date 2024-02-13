@@ -10,7 +10,7 @@ function Chatbot() {
   }, []);
 
   const deepChatRequest = {
-    url: 'https://alzi-django-web-app.azurewebsites.net/api/chat/', 
+    url: 'http://localhost:8000/api/chat/', 
     additionalBodyProps: {
       model: 'gpt-3.5-turbo',
       max_tokens: 200,
@@ -70,20 +70,10 @@ function Chatbot() {
               "ai": {"bubble": {"background": "rgba(255,255,255,0.7)"}}
             }
           }'
-          microphone='{
-            "button": {
-              "default": {
-                "container": {"default": {"bottom": "1em", "right": "0.6em", "borderRadius": "20px", "width": "1.9em", "height": "1.9em"}},
-                "svg": {"styles": {"default": {"bottom": "0.4em", "left": "0.3em"}}}
-              },
-              "position": "inside-right"
-            }
-          }'
-
           introMessage={{text: 'Talk to me!'}}
           request={deepChatRequest}
           speechToText={{
-            azure: {subscriptionKey: "20457bfbf6c9429c8dfc98f517390578", region: "westus"},
+            azure: {subscriptionKey: "<your key>", region: "westus"},
           }}
           
           textToSpeech={{lang: "us", volume: 0.9}}
