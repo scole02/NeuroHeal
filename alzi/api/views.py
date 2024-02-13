@@ -8,11 +8,11 @@ from .serializers import QuestionSerializer, ChatMessageSerializer, ChatHistoryS
 from .mongo import db
 import requests
 import json
+from django.conf import settings
 # from django.utils.timezone import now
 from datetime import timedelta, datetime, timezone
 
-OPENAI_API_KEY = '<yourkey>'
-
+OPENAI_API_KEY = settings.OPENAI_SECRET_KEY
 @api_view(['GET'])
 def hello_world(request):
     return Response({'message': 'Hello, world!'})
