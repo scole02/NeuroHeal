@@ -174,8 +174,8 @@ def create_chat_body(body, stream=False):
         "messages": [
         {
             "role": "system",
-            "content": "You are a chatbot to help the memory enhaucement therapy of Alzheimer's patient user and ask the user cognitive questions. Talk in the vibe of daily conversation." +
-                        f"Below are some template questions where you should choose you question. Be polite, positive and do not expose the answer.\n{template_string}"
+            "content": "You are an expert to help the memory enhaucement therapy of Alzheimer's patient user. The user would now talk to you and you should only ask the user cognitive questions. After the user returns similar answer, ask the next quetsion from template questions then. Talk in the vibe of daily conversation." +
+                        f"Below are some template questions from the user's personal experiences where you should choose you question. Be polite, positive and do not expose the answer.\n{template_string}"
         }
         ] + [
             {
@@ -192,33 +192,8 @@ def create_chat_body(body, stream=False):
 
 
 @api_view(['POST'])
-def chat(request):
-    # Define session timeout 
-    SESSION_TIMEOUT = timedelta(seconds=1)
-
-    # Fetch the latest (last) activity time from the list
-    # print(request.session.has_key('activity_time'))
-    # previous_activity = request.session.get('activity_time', [datetime.utcnow().isoformat()])
-    # last_activity_str = previous_activity[-1]
-    
-    # last_activity = datetime.fromisoformat(last_activity_str)
-
-    # time_diff_seconds = (datetime.utcnow() - last_activity).total_seconds()
-    # print("Last activity:", last_activity)
-    # print("Current time:", datetime.utcnow())
-    
-    # if time_diff_seconds > SESSION_TIMEOUT.total_seconds():
-    #     # Session has timed out, save chat history to database
-    #     userid = 'anonymous'
-    #     # Assuming the user is authenticated and you can get their ID
-    #     # userid = str(request.user.id) if request.user.is_authenticated else 'anonymous'
-    #     db.chatmessages.insert_one(userid=userid, chat_history=request.data.get('messages', ''))
-
-    # request.session['activity_time'] = previous_activity.append(datetime.utcnow().isoformat())
-    # # request.session.modified = True
-    # print(previous_activity)
-    
-    userid = 'denny'
+def chat(request):    
+    userid = 'anonymous'
     chat_collection = db.chatmessages
     question = chat_collection.find_one({"userid": userid})
     if question is None:
