@@ -45,6 +45,8 @@ Alzi’s commitment to organizational features aligns with the overarching moral
 
 Refer to this documentation for navigating the live demo : [website](https://abounding-sneezeweed-a1a.notion.site/Alzi-27ec8c12d5b141f4af6d1ec83726068a)
 
+## Alzi Function:
+
 ## File Structure
 ```
 
