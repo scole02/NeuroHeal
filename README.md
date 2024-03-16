@@ -45,7 +45,10 @@ Alzi’s commitment to organizational features aligns with the overarching moral
 
 Refer to this documentation for navigating the live demo : [website](https://abounding-sneezeweed-a1a.notion.site/Alzi-27ec8c12d5b141f4af6d1ec83726068a)
 
-## Alzi Function:
+## Alzi App Component:
+Patient Part: An voice-to-text chatbot that can communicate with the Alzheimer's patients
+
+Caregiver Login: An analytical app that can collect and analysis the chatting data which was collected from the patients and chatbot conversation. 
 
 ## File Structure
 ```
