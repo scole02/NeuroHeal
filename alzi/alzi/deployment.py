@@ -5,6 +5,9 @@ from .settings import BASE_DIR
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
 CORS_ORIGIN_WHITELIST = ['https://witty-pebble-0b4c4811e.4.azurestaticapps.net/', 'https://' + os.environ['WEBSITE_HOSTNAME'] ]
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
+CORS_ALLOWED_ORIGINS = [
+    'https://witty-pebble-0b4c4811e.4.azurestaticapps.net'
+]
 DEBUG = False
 
 OPENAI_SECRET_KEY = os.environ['OPENAI_SECRET_KEY']
