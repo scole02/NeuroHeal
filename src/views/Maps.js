@@ -6,15 +6,15 @@ function Maps() {
   useEffect(() => {
     // Load Google Maps API script
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCXJIMyGu2eTsfC4Z5wV5t9Ys82LTFO66o&libraries=places`;
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=' + `${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`;
     script.async = true;
     window.document.body.appendChild(script);
 
     script.addEventListener("load", () => {
       let google = window.google;
       let map = mapRef.current;
-      let lat = 40.748817; // Latitude
-      let lng = -73.985428; // Longitude
+      let lat = 47.621526; // Latitude
+      let lng = -122.176878; // Longitude
       const myLatlng = new google.maps.LatLng(lat, lng);
       const mapOptions = {
         zoom: 13,
