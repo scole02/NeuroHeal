@@ -6,7 +6,7 @@ function Maps() {
   useEffect(() => {
     // Load Google Maps API script
     const script = document.createElement("script");
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=' + `${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`;
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZisvRGtLBqxtywj-L0xKNg81jkWHlhA' //+ `${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`;
     script.async = true;
     window.document.body.appendChild(script);
 
