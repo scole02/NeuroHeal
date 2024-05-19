@@ -9,6 +9,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://witty-pebble-0b4c4811e.4.azurestaticapps.net',
     'https://' + os.environ['WEBSITE_HOSTNAME'],
 ]
+CORS_ORIGIN_ALLOW_ALL = True
 DEBUG = False
 
 OPENAI_SECRET_KEY = os.environ['OPENAI_SECRET_KEY']
