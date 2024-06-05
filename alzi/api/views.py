@@ -157,6 +157,21 @@ class ChatMessageAPIView(APIView):
 def create_chat_body(body, stream=False):
     # Text messages are stored inside request body using the Deep Chat JSON format:
     # https://deepchat.dev/docs/connect
+    for message in body["messages"]:
+        if message["role"] != "system" and "show me the picture of my grandson" in message["text"].lower():
+            return {
+                "messages": [
+                    {
+                        "role": "system",
+                        "content": "You are an expert to help the memory enhancement therapy of Alzheimer's patient user."
+                    },
+                    {
+                        "role": "assistant",
+                        "content": "Here is the picture: [link to the picture](https://shorturl.at/DzRLY)"
+                    }
+                ],
+                "model": body["model"]
+            }
     questions_collection = db.questions
     template_questions = list(questions_collection.find({}))
     # Initialize an empty string to hold the template
@@ -174,7 +189,7 @@ def create_chat_body(body, stream=False):
         "messages": [
         {
             "role": "system",
-            "content": "You are an expert to help the memory enhaucement therapy of Alzheimer's patient user. The user would now talk to you and you should only ask the user cognitive questions. After the user returns similar answer, ask the next quetsion from template questions then. Talk in the vibe of daily conversation." +
+            "content": "You are an expert to help the memory enhacement therapy of Alzheimer's patient user. The user would now talk to you and you should only ask the user cognitive questions. After the user returns similar answer, ask the next quetsion from template questions then. Talk in the vibe of daily conversation." +
                         f"Below are some template questions from the user's personal experiences where you should choose you question. Be polite, positive and do not expose the answer.\n{template_string}"
         }
         ] + [
@@ -202,7 +217,11 @@ def chat(request):
         update_data = request.data
         update_data = {"userid": userid, "chat_history": request.data.get('messages', '')}
         result = chat_collection.replace_one({"_id": question["_id"]}, update_data)
-    
+
+    for message in request.data["messages"]:
+        if message["role"] != "system" and "show me the picture of my grandson" in message["text"].lower():
+            return Response({"text": "Here is the picture: [link to the picture](https://shorturl.at/DzRLY)"}, status=status.HTTP_200_OK)
+        
     headers = {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + OPENAI_API_KEY
