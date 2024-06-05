@@ -28,17 +28,17 @@ Alzi’s commitment to organizational features aligns with the overarching moral
 
 ## How to Run
 
-- Clone the repo: `git clone https://github.com/creativetimofficial/light-bootstrap-dashboard-react.git`.
-- `npm install`
-- `pip install --user pipenv`
-- `sudo apt install python-django`
-- `pipenv install`  
-- `pipenv shell` 
-- `cd alzi`
-- `python manage.py migrate`  
-- `python manage.py runserver`
-- In a new shell start react project `cd NeuroHeal`
-- `npm start`
+- Clone the repo: `git clone https://github.com/scole02/NeuroHeal.git`.
+- Install Node.js packages: `npm install`
+- Install Pipenv (Python environment manager): `pip install --user pipenv`
+- Install Django using apt-get (for Debian-based systems): `sudo apt install python-django`
+- Install project dependencies using Pipenv: `pipenv install`  
+- Activate the Pipenv shell: `pipenv shell` 
+- Change directory to your Django project: `cd alzi`
+- Apply database migrations: `python manage.py migrate`  
+- Start the Django development server: `python manage.py runserver`
+- In a new shell start react project: `cd NeuroHeal`
+- Start the React development server: `npm start`
 - Navigate to http://localhost:3000
 
 ## How to Navigate on App
@@ -46,9 +46,9 @@ Alzi’s commitment to organizational features aligns with the overarching moral
 Refer to this documentation for navigating the live demo : [website](https://abounding-sneezeweed-a1a.notion.site/Alzi-27ec8c12d5b141f4af6d1ec83726068a)
 
 ## Alzi App Component:
-Patient Part: An voice-to-text chatbot that can communicate with the Alzheimer's patients
+**Patient Part:** An voice-to-text chatbot that can communicate with the Alzheimer's patients.
 
-Caregiver Login: An analytical app that can collect and analysis the chatting data which was collected from the patients and chatbot conversation. 
+**Caregiver Login:** An analytical app that can collect and analysis the chatting data which was collected from the patients and chatbot conversation. 
 
 ## File Structure
 ```
