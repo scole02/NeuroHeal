@@ -1,16 +1,40 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 //import "assets/css/Login.css";
 
 export default function LoginP() {
-  function ButtonLink({ to, children }) {
-    return <Link to={to}>
-              <button className="btn btn-primary btn-block">{children}
-              </button>
-           </Link>;
-  } 
+
+
+
+  function handleLoginClick() {
+    const halfCircleButtons = document.querySelectorAll('.half-circle-button');
+    const login = document.getElementById('plog')
+    const logo = document.getElementById('logo')
+    const logoCaption = document.querySelector('.landing-page-logo-caption')
+    console.log("HELLO")
+    console.log(halfCircleButtons)
+    login.style.transition = "opacity 0.5s ease-in-out"
+    login.style.opacity = '0';
+    halfCircleButtons.forEach(button => {
+      button.style.opacity = '0.8';
+    });
+    // wait 0.5s for fade in and then sent tranzition back to width
+    setTimeout(() => {
+      login.style.display = 'none';
+      halfCircleButtons.forEach(button => {
+        button.style.transition = 'width 0.3s ease';
+      });
+      logo.classList.add('expand');
+      logoCaption.style.transform = 'translate(0%, 220%)';
+
+    } , 500);
+    setTimeout(() => {
+      logoCaption.style.opacity = '1';
+    }, 1500);
+  }
+
   return (
-    <div className="container mt-5" style={{ backgroundColor: '#E0F1EF' }}>
+    <div id="plog" className="container mt-5" style={{ backgroundColor: '#FFF' }}>
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card">
@@ -39,12 +63,19 @@ export default function LoginP() {
                   />
                 </div>
                 <div className="form-group">
-                <ButtonLink to="/Chatbot">Login</ButtonLink>
+                  <button
+                      type="button"
+                      className="btn btn-primary"
+                      id="loginButton"
+                      onClick={handleLoginClick}
+                    >
+                      Login
+                  </button>                
                 </div>
               </form>
               <footer className="mt-4">
                 <p className="text-center">
-                  First time? <Link to="/register">Create an account</Link>.
+                  First time? <a>Create an account</a>.
                 </p>
                 <p className="text-center">
                   <Link to="/">Back to Homepage</Link>.
